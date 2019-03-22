@@ -6,7 +6,7 @@ Testing the waters of the Flask microframework, using Gunicorn as the applicatio
 Current features:
 
 ## Execution
-Start server with 4 workers:
+Start local server with 4 workers:
 ```
 gunicorn -w 4 app:app
 ```
