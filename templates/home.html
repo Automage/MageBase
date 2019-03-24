@@ -17,6 +17,16 @@
         <div id="message-container">
             <p>Log:</p>
         </div>
+
+        <div id="users">
+            {% for user in users %}
+                {% for post in user.posts%}
+                    <h3>{{post.title}}</h3>
+                    <h4>{{user.name}}</h4>
+                    <p>{{post.body | safe}}</p>
+                {% endfor %}
+            {% endfor %}
+        </div>
         
         <script src="../static/scripts/main.js"></script>
     </body>
