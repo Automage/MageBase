@@ -3,17 +3,14 @@ html {
     color: white;
 }
 
-p {
-    color: orange;
-}
-
 body {
     width: 1000px;
     margin: 20px auto;
-    background-color: #a20101;
+    background-color: #0a2325;
+    /*background-color: #a20101;*/
     padding: 0px 20px 20px 20px;
     border: 5px solid black;
-    font-family: "Times New Roman", Arial, Helvetica, sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 h1 {

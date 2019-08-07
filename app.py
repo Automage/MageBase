@@ -1,25 +1,31 @@
 from flask import Flask, render_template, redirect, url_for
-from user import User
+from post import Post
 
 app = Flask(__name__)
 
-users = [User('Pranav'), User('Man')]
-
-users[0].addPost('What the world runs on.',
-                 """
-                 It's simple. Love. Love is what we run on, all of us.<br/>Whether you know it or not.
-                 """)
-
-users[0].addPost('Dance!',
-                 """
-                 Follow the rhythm and don't stop. Let the music guide you, sit back and watch your body sway
-                 to the vibrations of life.
-                 """)
-
-users[1].addPost('How to live?',
-                 """
-                 Love <strong>everyone</strong> around you. Be yourself, and never let anyone tell you otherwise.   
-                 """)
+posts = [Post('What the world runs on.',
+              'Pranav',
+              'Yesterday',
+              """
+              It's simple. Love. Love is what we run on, all of us.<br/>Whether you know it or not.
+              """),
+         Post('Dance!',
+              'Manasi',
+              'Today',
+              """
+              Follow the rhythm and don't stop. Let the music guide you, sit back and watch your body sway to the vibrations of life.
+              """),
+         Post('Blowin\' in the wind',
+              'Bob Dylan',
+              'Today',
+              """
+              Lorem ipsum dolor sit amet, est ex laudem similique interpretaris, aeque albucius euripidis has ad, 
+              id lorem accusamus reformidans ius. Mundi alienum conceptam te nam, quodsi invidunt per ex. At est debet 
+              qualisque mnesarchum, mei ne harum sententiae. Est discere sententiae inciderint no, sea ne saepe perpetua, 
+              illum elitr usu ne. Viris oblique consulatu est te, ei mei modo dissentiunt efficiantur. Vero illud 
+              adipiscing vel te, putant invidunt mea ne.
+              """)
+         ]
 
 
 @app.route('/')
@@ -29,7 +35,7 @@ def root_reroute():
 
 @app.route('/home')
 def home():
-    return render_template('home.html', users=users)
+    return render_template('home.html', posts=posts)
 
 
 if __name__ == '__main__':

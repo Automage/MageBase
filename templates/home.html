@@ -4,7 +4,9 @@
         <title>MageBase</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="../static/styles/style.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/style.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/home.css') }}">
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
     </head>
     <body>
         
@@ -18,16 +20,22 @@
             <p>Log:</p>
         </div>
 
-        <div id="users">
-            {% for user in users %}
-                {% for post in user.posts%}
-                    <h3>{{post.title}}</h3>
-                    <h4>{{user.name}}</h4>
-                    <p>{{post.body | safe}}</p>
+        <div id="guestbook">
+            <h2>Guestbook</h2>
+            <div id="comments-container">
+                {% for post in posts %}
+                    <div class="comment">
+                        <p><span class="comment-title">{{post.title}}</span> <span class="comment-author">• {{post.author}}</span></p>
+                        <p class="comment-date">{{post.date}}</p>
+                        <p class="comment-body">{{post.body | safe}}</p>
+                    </div>
                 {% endfor %}
-            {% endfor %}
+            </div>
+
         </div>
+
+
         
-        <script src="../static/scripts/main.js"></script>
+        <script src="{{ url_for('static', filename='scripts/main.js') }}"></script>
     </body>
 </html>

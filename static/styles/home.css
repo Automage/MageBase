@@ -1,0 +1,29 @@
+#guestbook {
+    background-color: wheat;
+    padding: 5px 25px 5px 25px;
+    border-radius: 25px;
+    color: black;
+}
+
+.comment {
+    margin-bottom: 30px;
+}
+
+.comment-title {
+    color: orangered;
+    font-weight: bold;
+}
+.comment-author, .comment-date {
+    opacity: 0.3;
+    font-style: normal;
+}
+
+.comment-date {
+    margin-top: -15px;
+}
+
+.comment-body {
+    color: black;
+    margin-top: -10px;
+    font-size: medium;
+}
