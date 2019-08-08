@@ -1,8 +1,8 @@
 #guestbook {
     background-color: wheat;
-    padding: 5px 25px 5px 25px;
+    padding: 5px 30px 5px 30px;
     border-radius: 25px;
-    color: black;
+    color: #7f6e59;
 }
 
 .comment {
@@ -16,6 +16,7 @@
 .comment-author, .comment-date {
     opacity: 0.3;
     font-style: normal;
+    color: black;
 }
 
 .comment-date {
@@ -25,5 +26,59 @@
 .comment-body {
     color: black;
     margin-top: -10px;
-    font-size: medium;
+    margin-bottom: -10px;
+}
+
+#form-container {
+    width: 100%;
+}
+
+#form-container input[type=text], textarea {
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 14px;
+    outline-style: none;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: wheat;
+    border: 2px solid #c5ae8b;
+    border-radius: 5px;
+}
+
+#form-container input[type=text]:focus, textarea:focus {
+    border: 2px solid orangered;
+}
+
+#form-container textarea {
+    margin-top: 15px;
+}
+
+.input-container {
+    display: table;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.input-container-cell {
+    display: table-cell;
+}
+
+#form-author-cell {
+    padding-left: 10px;
+    width: 250px;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #7f6e59;
+    font-size: 14px;
+    opacity: 1; /* Firefox */
+}
+
+hr {
+       display: block;
+       position: relative;
+       margin: 8px auto;
+       width: 100%;
+       border-top: 1px solid #c5ae8b;
+       border-bottom: 1px solid #c5ae8b;
 }

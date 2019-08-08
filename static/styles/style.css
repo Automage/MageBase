@@ -4,9 +4,9 @@ html {
 }
 
 body {
-    width: 1000px;
+    width: 80%;
     margin: 20px auto;
-    background-color: #0a2325;
+    background-color: #801e0f;
     /*background-color: #a20101;*/
     padding: 0px 20px 20px 20px;
     border: 5px solid black;
@@ -17,3 +17,5 @@ h1 {
     text-align: center;
     font-size: 30px;
 }
+
+
