@@ -45,12 +45,18 @@
     border-radius: 5px;
 }
 
-#form-container input[type=text]:focus, textarea:focus {
+#form-container input[type=text]:focus, textarea:focus, .form-button:hover {
     border: 2px solid orangered;
+}
+
+.form-button:hover {
+    color: orangered;
 }
 
 #form-container textarea {
     margin-top: 15px;
+    height: 200px;
+    resize: none;
 }
 
 .input-container {
@@ -61,6 +67,19 @@
 
 .input-container-cell {
     display: table-cell;
+}
+
+.form-button {
+    color: #7f6e59;
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 14px;
+    background-color: wheat;
+    border: 2px solid #c5ae8b;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 12px 30px;
+    cursor: pointer;
 }
 
 #form-author-cell {

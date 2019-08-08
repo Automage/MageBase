@@ -57,7 +57,8 @@ def root_reroute():
 def home():
     print(request)
     if request.method == 'POST':
-        return "YEEEEEEEEEEEEEEEEEEEEEEEE"
+        return "Title: " + request.form['title'] + "\nAuthor: " + request.form['author'] + "\nBody:\n" + request.form[
+            'body']
     return render_template('home.html', posts=posts)
 
 
