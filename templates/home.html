@@ -38,13 +38,13 @@
                 <form action="{{ url_for('home')}}" method="post" autocomplete="off">
                     <div class="input-container">
                         <div id="form-title-cell" class="input-container-cell">
-                            <input type="text" name="title" placeholder="Title" required>
+                            <input type="text" name="title" placeholder="Title" pattern=".*\S.*" required>
                         </div>
                         <div id="form-author-cell" class="input-container-cell">
-                            <input type="text" name="author" placeholder="Name" required><br>
+                            <input type="text" name="author" placeholder="Name" pattern=".*\S.*" required><br>
                         </div>
                     </div>
-                    <textarea id="form-body" name="body" placeholder="Body"></textarea><br>
+                    <textarea id="form-body" name="body" placeholder="Body" required></textarea><br>
                     <input class="form-button" type="submit" value="Submit Post">
                 </form>
             </div>

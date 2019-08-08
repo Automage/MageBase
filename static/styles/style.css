@@ -18,4 +18,9 @@ h1 {
     font-size: 30px;
 }
 
+p {
+    /* Preserves whitespaces and line-breaks */
+    white-space: pre-wrap;
+}
+
 

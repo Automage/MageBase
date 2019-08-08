@@ -5,7 +5,6 @@ from db_handler import DatabaseHandler
 
 app = Flask(__name__)
 
-
 poster = [Post('What the world runs on.',
                'Pranav',
                'Yesterday',
@@ -62,7 +61,8 @@ def home():
     # POST: Guestbook form
     if request.method == 'POST':
         timestamp = datetime.now()
-        db.add_post(Post(request.form['title'], request.form['author'], timestamp, request.form['body']))
+        db.add_post(Post(request.form['title'].strip(), request.form['author'].strip(), timestamp,
+                         request.form['body'].strip()))
         return redirect(url_for('home'))
 
     # GET:
