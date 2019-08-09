@@ -10,7 +10,7 @@
     </head>
     <body>
         
-        <h1>The Perpetual Odyssey of Life</h1>
+        <h1>Welcome</h1>
         <h2>Is this real life?</h2>
         <p>The Perpetual Odyssey of Life</p>
         
@@ -24,13 +24,14 @@
             <h2>Guestbook</h2>
             <div id="comments-container">
                 {% for post in posts %}
+                    <hr>
                     <div class="comment">
                         <p><span class="comment-title">{{post.title}}</span> <span class="comment-author">• {{post.author}}</span></p>
                         <p class="comment-date">{{post.date}}</p>
                         <p class="comment-body">{{post.body | safe}}</p>
                     </div>
-                    <hr>
                 {% endfor %}
+                <hr>
             </div>
 
             <div id="form-container">
