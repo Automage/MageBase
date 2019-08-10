@@ -8,7 +8,7 @@ from db_handler import DatabaseHandler
 app = Flask(__name__)
 
 # Flask-mail config
-# MAIL_USERNAME, MAIL_PASSWORD, MAIL_DEFAULT_SENDER should be set in cli
+# MAIL_USERNAME, MAIL_PASSWORD, MAIL_DEFAULT_SENDER should be set as environ variables
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = 1

@@ -1,3 +1,10 @@
+#main-header {
+    text-align: left;
+    margin-left: calc(50% - 50px);
+}
+
+/*Guestbook styling*/
+
 #guestbook {
     background-color: wheat;
     padding: 5px 30px 5px 30px;
