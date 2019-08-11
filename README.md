@@ -7,6 +7,14 @@ Current features:
 - Redirection
 - Serving static files
 
+## Deployment
+
+Create a virtualenv and install the requirements from requirements.txt.
+
+```
+pip install -r requirements.txt
+```
+
 ## Execution
 Start local server with 4 workers:
 ```
