@@ -1,59 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>MageBase</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/style.css') }}">
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/home.css') }}">
-        <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
-    </head>
-    <body>
+<head>
+    <title>MageBase</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/home.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Roboto|Roboto+Condensed:300,400&display=swap" rel="stylesheet">
+</head>
+<body>
 
-        <h1 id="main-header">Slice of P</h1>
+<h1 id="main-header">Slice of P</h1>
 
-        <h2>Is this real life?</h2>
-        <p>The Perpetual Odyssey of Life</p>
-        
-        <button>doorbell</button>
-        
-        <div id="message-container">
-            <p>Log:</p>
+<h2>Is this real life?</h2>
+<p class="test">Welcome to my lil' internet abode. Attractions include my unnecessarily philosophical blog, a guestbook (which you should sign!), and that's about all I would consider an attraction. Enjoy your stay, I've already taken your data as rent.</p>
+<p>The Perpetual Odyssey of Life</p>
+
+<button>doorbell</button>
+
+<div id="message-container">
+    <p>Log:</p>
+</div>
+
+<div id="guestbook">
+    <h2>Guestbook</h2>
+    <div id="comments-container">
+        {% for post in posts %}
+        <hr>
+        <div class="comment">
+            <p><span class="comment-title">{{post.title}}</span> <span class="comment-author">• {{post.author}}</span></p>
+            <p class="comment-date">{{post.date}}</p>
+            <p class="comment-body">{{post.body | safe}}</p>
         </div>
+        {% endfor %}
+        <hr>
+    </div>
 
-        <div id="guestbook">
-            <h2>Guestbook</h2>
-            <div id="comments-container">
-                {% for post in posts %}
-                    <hr>
-                    <div class="comment">
-                        <p><span class="comment-title">{{post.title}}</span> <span class="comment-author">• {{post.author}}</span></p>
-                        <p class="comment-date">{{post.date}}</p>
-                        <p class="comment-body">{{post.body | safe}}</p>
-                    </div>
-                {% endfor %}
-                <hr>
+    <div id="form-container">
+        <h3>Sign the Guestbook</h3>
+        <form action="{{ url_for('home')}}" method="post" autocomplete="off">
+            <div class="input-container">
+                <div id="form-title-cell" class="input-container-cell">
+                    <input type="text" name="title" placeholder="Title" pattern=".*\S.*" required>
+                </div>
+                <div id="form-author-cell" class="input-container-cell">
+                    <input type="text" name="author" placeholder="Name" pattern=".*\S.*" required><br>
+                </div>
             </div>
-
-            <div id="form-container">
-                <h3>Sign the Guestbook</h3>
-                <form action="{{ url_for('home')}}" method="post" autocomplete="off">
-                    <div class="input-container">
-                        <div id="form-title-cell" class="input-container-cell">
-                            <input type="text" name="title" placeholder="Title" pattern=".*\S.*" required>
-                        </div>
-                        <div id="form-author-cell" class="input-container-cell">
-                            <input type="text" name="author" placeholder="Name" pattern=".*\S.*" required><br>
-                        </div>
-                    </div>
-                    <textarea id="form-body" name="body" placeholder="Body" required></textarea><br>
-                    <input class="form-button" type="submit" value="Submit Post">
-                </form>
-            </div>
-        </div>
+            <textarea id="form-body" name="body" placeholder="Body" required></textarea><br>
+            <input class="form-button" type="submit" value="Submit Post">
+        </form>
+    </div>
+</div>
 
 
-        
-        <script src="{{ url_for('static', filename='scripts/main.js') }}"></script>
-    </body>
+<script src="{{ url_for('static', filename='scripts/main.js') }}"></script>
+</body>
 </html>

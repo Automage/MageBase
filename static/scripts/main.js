@@ -4,7 +4,7 @@ var button = document.querySelector('button');
 var messageCount = 0;
 
 //Header
-var headerNames = ['Slice of P', 'Slice of π', 'Slice of Pranaw', 'Slice of Grapdpa', 'Slice of Sidhu']
+var headerNames = ['Slice of P', 'Slice of Pranaw', 'Slice of π', 'Slice of Grapdpa', 'Slice of Sidhu']
 var headerState = 0;
 
 header.onclick = function () {

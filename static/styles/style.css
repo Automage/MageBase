@@ -23,4 +23,9 @@ p {
     white-space: pre-wrap;
 }
 
+.test {
+    font-family: "Roboto Condensed", sans-serif;
+    font-weight: lighter;
+}
+
 
